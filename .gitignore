@@ -5,3 +5,4 @@ package-lock.json
 yarn.lock
 .vscode/
 backend/core/pos/StrumSales.code-workspace
+*.code-workspace

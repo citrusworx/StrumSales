@@ -4,8 +4,13 @@ class PoS {
     private totalAmount: number; // Placeholder for total amount
     private transactionId: string; // Placeholder for transaction ID
     private receiptNumber: number;
+    private orderNumber: number;
     private orderType: string; // Placeholder for order type (online/in-store)
-    constructor() {
+    private config: PoSConfig; // Placeholder for PoS configuration
+
+    constructor(config: PoSConfig) {
+        this.config = config;
+        this.cart = [];
         this.init();
     }
     
@@ -41,5 +46,10 @@ class PoS {
             console.error('Invalid order type. Cannot generate transaction ID.');
             return;
         }                                                                                 
+    }
+
+    generateOrderNumber() {
+        // Create instances of web and in-store orders
+        this.orderNumber = Math.floor(Math.random() * 1000000); // Random number as order number
     }
 }
